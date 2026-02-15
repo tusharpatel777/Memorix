@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+@theme {
+  --color-neon-primary: #00f5ff;
+  --color-neon-secondary: #ff00ff;
+
+  --color-dark-900: #0f0f0f;
+  --color-dark-800: #1a1a1a;
+  --color-dark-700: #2a2a2a;
+
+  --font-sans: 'Inter', sans-serif;
+
+  --animate-glow: glow 2s ease-in-out infinite alternate;
+
+  --shadow-neon: 0 0 10px rgba(0, 245, 255, 0.3);
+  --shadow-neon-hover: 0 0 20px rgba(0, 245, 255, 0.6);
+
+  @keyframes glow {
+    0% {
+      box-shadow: 0 0 5px #00f5ff, 0 0 10px #00f5ff;
+    }
+
+    100% {
+      box-shadow: 0 0 20px #00f5ff, 0 0 30px #00f5ff;
+    }
+  }
+}
+
+@layer base {
+  body {
+    background-color: var(--color-dark-900);
+    color: white;
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    background: linear-gradient(135deg, #0f0f0f 0%, #1a1a2e 100%);
+    min-height: 100vh;
+  }
+}
+
+@layer components {
+  .glass-card {
+    backdrop-filter: blur(16px);
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 1rem;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  }
+
+  .neon-button {
+    padding: 0.5rem 1.5rem;
+    border-radius: 9999px;
+    background-color: transparent;
+    border: 1px solid var(--color-neon-primary);
+    color: var(--color-neon-primary);
+    transition: all 300ms;
+    box-shadow: var(--shadow-neon);
+  }
+
+  .neon-button:hover {
+    background-color: var(--color-neon-primary);
+    color: black;
+    box-shadow: var(--shadow-neon-hover);
+  }
+
+  .input-field {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    color: white;
+    transition: all 300ms;
+    outline: none;
+  }
+
+  .input-field::placeholder {
+    color: #6b7280;
+  }
+
+  .input-field:focus {
+    border-color: var(--color-neon-primary);
+    box-shadow: 0 0 0 1px var(--color-neon-primary);
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0f0f0f;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
