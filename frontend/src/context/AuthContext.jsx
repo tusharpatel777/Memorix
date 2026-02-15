@@ -9,7 +9,7 @@ export const AuthProvider = ({ children }) => {
     const [isLoading, setIsLoading] = useState(true);
 
     // Configure axios defaults
-    axios.defaults.baseURL = 'http://localhost:5000/api';
+    axios.defaults.baseURL = 'https://memorix-7trc.onrender.com/api';
 
     useEffect(() => {
         const storedUser = localStorage.getItem('user');
