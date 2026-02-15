@@ -41,6 +41,9 @@ const RegisterPage = () => {
         <div className="flex justify-center items-center min-h-screen">
             <GlassCard className="w-full max-w-md">
                 <div className="text-center mb-8">
+                    <Link to="/" className="inline-block text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-neon-primary to-neon-secondary tracking-widest hover:scale-105 transition-transform mb-6">
+                        MEMORIX
+                    </Link>
                     <h1 className="text-3xl font-bold text-white mb-2">Create Account</h1>
                     <p className="text-gray-400">Start your memory journey</p>
                 </div>
